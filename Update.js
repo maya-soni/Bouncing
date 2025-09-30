@@ -1,8 +1,8 @@
 let moons ={}
 let bloodmoon={}
 let moon={}
-let dx,dy
 let initialNumberofMoons = 2
+let dx,dy
 
 const SPEED=-1.1
 const MOON_SIZE_MIN= 10
