@@ -1,5 +1,26 @@
-  UpdateShape(moon)
+let moons ={}
+let bloodmoon={}
+let moon={}
+let dx,dy
+let initialNumberofMoons = 2
+
+const SPEED=-1.1
+const MOON_SIZE_MIN= 10
+const MOON_SIZE_MAX= 50
+
+function setup() {
+  createCanvas(400, 400)
+  moon = createmoon (width/2, height/2, 50)
+  ellipseMode(RADIUS)
 }
+
+function draw() {
+  background(0,0,139)
+  drawmoon(moon)
+  movemoon(moon)
+UpdateShape(moon)
+}
+
 for( let moon of moons ) { // for each loop (loop over every item)
     drawmoon(moon)
     updatemoon(moon)
