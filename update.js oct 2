@@ -1,0 +1,30 @@
+let numberOfcircles = 8;
+let circles = []
+
+function setup() {
+  createCanvas(400, 400);
+  ellipseMode(RADIUS)
+  
+  // populating the array
+  while( circles.length < numberOfcircles ) {
+    let theta = (TWO_PI/numberOfcircles)*circles.length
+    circles.push({
+      x: width/2 + 100 * cos(theta),
+      y: height/2 + 100 * sin(theta),
+      theta: theta,
+      r: 100
+    })
+  }
+}
+
+function draw() {
+  background("darkblue")
+  fill("yellow")
+  circle(width/2,height/2,100)
+  for( let c of circles ) {
+    circle(c.x, c.y, 10)
+    c.r += random(-3,3)
+    c.x = width/2 + c.r * cos(c.theta)
+    c.y = height/2 + c.r * sin(c.theta)
+  }
+}
